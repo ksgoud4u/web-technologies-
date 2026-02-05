@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-300">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAB - 1</title>
+
+    <!-- Tailwind CDN with dark mode enabled -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200 min-h-screen flex items-center justify-center">
+
+<div class="w-full max-w-4xl bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6">
+    <main class="space-y-6">
+
+        <!-- Header -->
+        <header class="flex items-center justify-between border-b pb-4 dark:border-gray-700">
+            <h1 class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
+                Media Storage
+            </h1>
+            <button
+                id="btn"
+                class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+                Switch Theme
+            </button>
+        </header>
+
+        <!-- Article -->
+        <article class="space-y-1">
+            <h2 class="text-xl font-semibold">CSE E</h2>
+            <p class="text-gray-600 dark:text-gray-400">
+                Bachelor of Technology, SNIST
+            </p>
+        </article>
+
+        <!-- Section -->
+        <section class="space-y-3">
+            <h3 class="text-lg font-semibold border-l-4 border-indigo-600 pl-3">
+                Professional Summary
+            </h3>
+
+            <p>An Eight Semesters Degree Program</p>
+            <p>40+ subjects, Labs, Internals, Externals, Assignments, Attendance...</p>
+            <p><span class="font-semibold">Core Subjects:</span> CN, OOPS, DBMS, OS</p>
+
+            <h4 class="text-md font-semibold mt-4 border-l-4 border-indigo-600 pl-3">
+                Tech Stack
+            </h4>
+
+            <p><span class="font-semibold">Frontend:</span> JavaScript, React.js</p>
+            <p><span class="font-semibold">Database:</span> MySQL, MongoDB</p>
+            <p><span class="font-semibold">Web Technologies:</span> HTML, CSS, JavaScript</p>
+            <p><span class="font-semibold">Version Control:</span> Git</p>
+        </section>
+
+        <!-- Aside -->
+        <aside class="bg-indigo-50 dark:bg-gray-700 border border-indigo-200 dark:border-gray-600 rounded-lg p-4">
+            <strong class="block text-indigo-700 dark:text-indigo-300 mb-1">
+                Web Storage API Note:
+            </strong>
+            <p id="storage-msg" class="text-sm">
+                Theme preference stored using localStorage.
+            </p>
+        </aside>
+
+        <!-- Footer -->
+        <footer class="text-center text-sm text-gray-500 dark:text-gray-400 pt-4 border-t dark:border-gray-700">
+            &copy; 2026 WT LAB - Semantic Elements
+        </footer>
+
+    </main>
+</div>
+
+<!-- Theme Switch Script -->
+<script>
+    const btn = document.getElementById("btn");
+    const html = document.documentElement;
+
+    // Load saved theme
+    if (localStorage.getItem("theme") === "dark") {
+        html.classList.add("dark");
+    }
+
+    btn.addEventListener("click", () => {
+        html.classList.toggle("dark");
+
+        if (html.classList.contains("dark")) {
+            localStorage.setItem("theme", "dark");
+        } else {
+            localStorage.setItem("theme", "light");
+        }
+    });
+</script>
+
+</body>
+</html>
