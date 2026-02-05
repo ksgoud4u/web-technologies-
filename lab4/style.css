@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header, footer {
+  background-color: rgb(247, 9, 9);
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+  background-color: lightblue;
+  min-height: 300px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: lightgreen;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: green;
+  color: white;
+}
+
+#randomNumber {
+  font-weight: bold;
+  margin: 20px;
+  font-size: 18px;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 10px;
+}
+
+li {
+  background-color: white;
+  margin: 5px auto;
+  padding: 8px;
+  width: 150px;
+  border-radius: 5px;
+}
