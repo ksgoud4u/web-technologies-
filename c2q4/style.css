@@ -9,7 +9,7 @@
 header,
 footer {
     text-align: center;
-    background-color: lightcoral;
+    background-color: rgb(255, 0, 0);
     color: #fff;
     padding: 15px;
 }
@@ -17,7 +17,7 @@ footer {
 /* Main */
 main {
     padding: 20px;
-    background-color: lightblue;
+    background-color: rgb(58, 250, 0);
     min-height: 80vh;
 }
 
@@ -33,7 +33,7 @@ table {
     border-collapse: collapse;
     width: 100%;
     margin-top: 20px;
-    background-color: white;
+    background-color: #ffffff;
 }
 
 th,
@@ -44,6 +44,6 @@ td {
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #f4f801;
     color: black;
 }
