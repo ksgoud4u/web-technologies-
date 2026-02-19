@@ -1,23 +1,34 @@
-const toggleBtn = document.getElementById('btn');
-const storageMsg = document.getElementById('storage-msg');
+const express = require("express");
+const dotenv = require('dotenv');
 
-// Load theme from LocalStorage
-const currentTheme = localStorage.getItem('theme');
+dotenv.config();
 
-if (currentTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-    storageMsg.innerText = "Status: Dark Mode (Loaded from LocalStorage)";
-} else {
-    storageMsg.innerText = "Status: Light Mode (Default)";
-}
+const app = express();
+const port = process.env.PORT || 3000;
 
-// Toggle theme
-toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
 
-    const isDark = document.body.classList.contains('dark-mode');
-    const theme = isDark ? 'dark' : 'light';
+app.get('/', (req, res) => {
+    res.send('Environment Variables Demo!');
+});
 
-    localStorage.setItem('theme', theme);
-    storageMsg.innerText = `Preference updated: ${theme} mode saved to Web Storage API`;
+app.get('/config', (req, res) => {
+    const dbHost = process.env.DB_HOST;
+    const dbUser = process.env.DB_USER;
+    const apiKey = process.env.API_KEY;
+
+    res.json({
+        dbHost, 
+        dbUser,
+        apiKey
+    });
+});
+
+
+app.use((req, res) => {
+    res.status(404).send('Not Found');
+});
+
+
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
 });
